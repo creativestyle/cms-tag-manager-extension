@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Creativestyle\CmsTagManagerExtension\Api\TagsRepositoryInterface"
+                type="Creativestyle\CmsTagManagerExtension\Model\TagsRepository" />
+    <preference for="Creativestyle\CmsTagManagerExtension\Api\Data\TagsInterface"
+                type="Creativestyle\CmsTagManagerExtension\Model\Tags" />
+    <type name="Magento\Cms\Model\Page\DataProvider">
+        <plugin name="after_cms_edit_data_provider" type="\Creativestyle\CmsTagManagerExtension\Plugin\AfterCmsEditDataProvider" sortOrder="1" />
+    </type>
+    <type name="Magento\Cms\Model\ResourceModel\Page\Collection">
+        <plugin name="filter_cms_collection_by_tag" type="Creativestyle\CmsTagManagerExtension\Plugin\AroundFilterByTag" sortOrder="10" />
+    </type>
+    <type name="Magento\Cms\Model\Page">
+        <plugin name="cms_teaser_image_url_method" type="Creativestyle\CmsTagManagerExtension\Plugin\CmsTeaserImageUrlMethod" sortOrder="10" />
+    </type>
+</config>

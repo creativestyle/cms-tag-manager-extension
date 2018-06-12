@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Creativestyle_CmsTagManagerExtension" setup_version="0.0.4" schema_version="0.0.4">
+        <sequence>
+            <module name="Magento_Cms" />
+            <module name="Creativestyle_ContentConstructor" />
+            <module name="Creativestyle_ContentConstructorAdminExtension" />
+            <module name="Creativestyle_ContentConstructorFrontendExtension" />
+        </sequence>
+    </module>
+</config>
